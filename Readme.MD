@@ -18,8 +18,8 @@ In above (Voice Design)
 * __Tech Smart__ is __Invocation Name__ (This is what applications has controls and also called __Skill__)
 * __next design pattern__ is __Intent__ (This is application designed sentences)
 
-![User interaction]((https://github.com/sairamaj/alexa/blob/master/images/userinteraction.jpg))
-![Voice Design]((https://github.com/sairamaj/alexa/blob/master/images/voicedesign.png))
+![User interaction](https://github.com/sairamaj/alexa/blob/master/images/userinteraction.JPG)
+![Voice Design](https://github.com/sairamaj/alexa/blob/master/images/VoiceDesign.PNG)
 [Source](https://app.pluralsight.com/library/)
 
 ## Supported Phrases by Alexa are

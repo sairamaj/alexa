@@ -34,42 +34,25 @@ In above (Voice Design)
 
 ## Voice Interface is JSon
 ```json
-  [
-      "intents":
-        {
-            "intent" : "DesignPatternsIntent",
-            "slots": [
-
-            ]
-        },
-
-        {
-         "intent" : "AmazonStopIntent",
-         "slots": [
-                
-            ]
-        },   
-
-        {
-         "intent" : "AmazonCancelIntent",
-         "slots": [
-                
-            ]
-        }   
-        
-        {
-         "intent" : "AmazonHelpIntent",
-         "slots": [
-                
-            ]
-        }   
- ]
+  {
+    "intents" :
+    [
+      {
+		 "intent": "DesignPatternIntent",
+         "intent": "AmazonHelpIntent"
+      }  
+  ]
+ }
 ```
 ## Sample Utterances
 * Key value pair in plain text which maps __intents__ to sample spoken phrases
-* _DesignPatternsIntent_ for next design pattern
+* _DesignPatternIntent_ for next design pattern
 
-
+## Slots
+* Slots are arguments to Intents
 
 # Simulator
 * https://echosim.io/
+
+# Utterences generator
+* http://alexa-utter-gen.paperplane.io/

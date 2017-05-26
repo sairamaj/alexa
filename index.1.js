@@ -4,10 +4,13 @@ var Alexa = require('alexa-sdk');
 var APP_ID = "amzn1.echo-sdk-ams.app.[amzn1.ask.skill.7b21ed76-1c8d-483b-ac6f-899fd16469df]";
 var SKILL_NAME = 'Tech Smart';
 
-var DesignPatternSummary = [
-    "Creational Patterns, Abstract Factory, Builder, Factory Method,Prototype, Singleton",
-    "Structural Patterns, Adapter, Bridge , Composite, Decorator, Facade, Flyweight, Proxy",
-    "Behavioral Patterns, Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor",
+/**
+ * Array containing US capital facts.
+ */
+var DesignPatternInfo = [
+    "Singleton is creational pattern, ensures a class has only one instance",
+    "Factory is creational pattern, Creation should be separated from representation of an object",
+    "Observer is behavior pattern, Adopt the principle of Separation of Concerns"
 ];
 
 exports.handler = function (event, context, callback) {
@@ -26,10 +29,16 @@ var handlers = {
     },
     'GetDesignPattern': function () {
         var speechOutput
-        var summary = DesignPatternSummary[0];
-        // Create speech output
-        speechOutput = summary;
-        this.emit(':tellWithCard', speechOutput, SKILL_NAME, summary)
+        var patternName = this.event.request.intent.slots.name.value
+        if (patternName == null) {
+            var factIndex = Math.floor(Math.random() * DesignPatternInfo.length);
+            var randomFact = DesignPatternInfo[factIndex];
+            // Create speech output
+            speechOutput = randomFact;
+        }else{
+            speechOutput = "pattern will be " + patternName
+        }
+        this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = "You can say give me last design pattern, or, you can say exit... What can I help you with?";

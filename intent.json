@@ -1,0 +1,28 @@
+{
+  "intents": [
+    {
+      "intent": "DesignPatternSummaryIntent"
+    },
+    {
+      "intent": "DesignPatternLearningIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "name",
+          "type": "PATTERNNAMES"
+        }
+      ],
+      "intent": "DesignPatternIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

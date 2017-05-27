@@ -51,8 +51,8 @@ In above (Voice Design)
 ## Slots
 * Slots are arguments to Intents
 
-# Simulator
-* https://echosim.io/
-
-# Utterences generator
-* http://alexa-utter-gen.paperplane.io/
+## Useful resources
+* [Announcing the Alexa Skills Kit for Node.js](https://developer.amazon.com/blogs/post/Tx213D2XQIYH864/Announcing-the-Alexa-Skills-Kit-for-Node-js)
+* [Building an Amazon Alexa Skills with Node.js](https://jordankasper.com/building-an-amazon-alexa-skill-with-node-js/)
+* [Utterances generator](http://alexa-utter-gen.paperplane.io/)
+* [Simulator](https://echosim.io/)

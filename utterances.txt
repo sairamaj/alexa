@@ -1,0 +1,11 @@
+DesignPatternSummaryIntent for design pattern summary
+DesignPatternSummaryIntent design pattern summary
+DesignPatternSummaryIntent get me design pattern summary
+DesignPatternSummaryIntent tell me design pattern summary
+DesignPatternLearningIntent continue from last pattern
+DesignPatternLearningIntent continue where I left of
+DesignPatternLearningIntent continue learning
+DesignPatternLearningIntent learn design patterns
+DesignPatternIntent tell me about {name} pattern
+DesignPatternIntent tell me {name} pattern
+DesignPatternIntent get me {name} pattern

@@ -5,9 +5,9 @@ var APP_ID = "amzn1.echo-sdk-ams.app.[amzn1.ask.skill.7b21ed76-1c8d-483b-ac6f-89
 var SKILL_NAME = 'Tech Smart';
 
 var DesignPatternSummary = [
-    "Creational Patterns, Abstract Factory, Builder, Factory Method,Prototype, Singleton",
-    "Structural Patterns, Adapter, Bridge , Composite, Decorator, Facade, Flyweight, Proxy",
-    "Behavioral Patterns, Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor",
+    '<emphasis level="strong">Creational Patterns </emphasis>, Abstract Factory, Builder, Factory Method,Prototype, Singleton. ' +
+    '<break time="3s"/><emphasis level="strong"></emphasis> Structural Patterns, Adapter, Bridge , Composite, Decorator, Facade, Flyweight, Proxy. ' +
+    '<break time="3s"/><emphasis level="strong">Behavioral Patterns</emphasis>, Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor'
 ];
 
 exports.handler = function (event, context, callback) {
@@ -26,7 +26,7 @@ var handlers = {
     },
     'GetDesignPattern': function () {
         var speechOutput
-        var summary = DesignPatternSummary[0];
+        var summary = DesignPatternSummary  [0];
         // Create speech output
         speechOutput = summary;
         this.emit(':tellWithCard', speechOutput, SKILL_NAME, summary)

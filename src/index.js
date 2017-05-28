@@ -52,12 +52,13 @@ function getNextPattern(currentPattern) {
 exports.handler = function (event, context, callback) {
     var alexa = Alexa.handler(event, context);
     alexa.APP_ID = APP_ID;
-    alexa.registerHandlers(handlers, learningModeHandlers);
+    alexa.registerHandlers(learningModeHandlers, handlers);
     alexa.execute();
 };
 
 var learningModeHandlers = Alexa.CreateStateHandler(states.LEARNINGMODE, {
     'DesignPatternLearningIntent': function () {
+        console.log("In LEARNINGMODE.DesignPatternLearningIntent")
         console.log("handler state is: " + JSON.stringify(this.handler.state))
         var nextPattern = getNextPattern(this.attributes['currentpattern'])
         var speechOutput = nextPattern.description + '. You want to me to continue yes or no'
@@ -65,8 +66,15 @@ var learningModeHandlers = Alexa.CreateStateHandler(states.LEARNINGMODE, {
         this.handler.state = states.LEARNINGMODE
         this.emit(':ask', speechOutput, SKILL_NAME, speechOutput)
     },
+
+    'AMAZON.NoIntent': function () {
+        this.handler.state = ""
+        this.emit(':tell', 'Ok, see you next time!');
+    },
+
     "AMAZON.StopIntent": function () {
         console.log("STOPINTENT");
+        this.handler.state = ""
         this.emit(':tell', "Goodbye!");
     },
     "AMAZON.CancelIntent": function () {
@@ -78,13 +86,13 @@ var learningModeHandlers = Alexa.CreateStateHandler(states.LEARNINGMODE, {
     },
     'AMAZON.YesIntent': function () {
         console.log("In LEARNINGMODE.YesIntent")
-        this.handler.state = states.LEARNINGMODE;
-        this.emit(':ask', 'Great! ' + ' Next pattern is Builder.', 'Next pattern is Builder.');
-    },
-    'AMAZON.NoIntent': function () {
-        this.emit(':tell', 'Ok, see you next time!');
-    },
-
+        console.log("handler state is: " + JSON.stringify(this.handler.state))
+        var nextPattern = getNextPattern(this.attributes['currentpattern'])
+        var speechOutput = nextPattern.description + '. You want to me to continue yes or no'
+        this.attributes['currentpattern'] = nextPattern.name
+        this.handler.state = states.LEARNINGMODE
+        this.emit(':ask', speechOutput, SKILL_NAME, speechOutput)
+        },
     'SessionEndedRequest': function () {
         console.log('session ended!');
         this.attributes['endedSessionCount'] += 1;

@@ -1,0 +1,8 @@
+{
+    "clientId": "alexa-skill",
+    "clientSecret": "",
+    "redirectUri": "",
+    "host": "",
+    "authorizepath": "",
+    "accesstokenpath": ""
+}

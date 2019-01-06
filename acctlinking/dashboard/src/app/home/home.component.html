@@ -1,0 +1,42 @@
+<br/>
+<br/>
+<div *ngIf='errorMessage' class='alert alert-danger'>
+    Error: {{ errorMessage }}
+</div>
+
+<div align="center">
+    <a href="{{url}}">
+        Account Linking
+    </a>
+</div>
+
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='table-responsive' align="center">
+
+        <table class='table'>
+            <thead>
+                <th>User</th>
+                <th>Refresh</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor='let token of tokens'>
+                    <td>
+                        <a [routerLink]="['/tokens', token.user]">
+                            {{ token.user }}
+                        </a>
+                    </td>
+                    <td>
+                        <a class='btn btn-success' (click)='onRefreshToken(token.user)' style='width:120px'>
+                            RefreshToken
+                        </a> &nbsp;
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

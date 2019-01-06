@@ -1,0 +1,29 @@
+{
+  "name": "alexa-client",
+  "version": "1.0.0",
+  "description": "testing alexa skill",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp scripts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "client"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "https": "^1.0.0",
+    "jwt-decode": "^2.2.0",
+    "npm": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.33",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.1",
+    "typescript": "^3.0.1"
+  }
+}
